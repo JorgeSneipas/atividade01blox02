@@ -11,6 +11,12 @@ public class MainAplication extends Application {
 
     public static void main(String[] args) throws SQLException {
         Connection galadriel = new ConexaoSingleton().getConn();
+        Connection gandalf = new ConexaoSingleton().getConn();
+
+        if(galadriel==gandalf)
+            System.out.println("As conexoes sao iguais");
+        else
+            System.out.println("As conexões sao diferentes");
 
         String sql = "Create table alunos (matricula int primary key, nome varchar(50))";
 
